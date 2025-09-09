@@ -2,5 +2,7 @@
     <string name="app_name">LightsOut</string>
 
     <string name="Header">Brock Lights</string>
+    <string name="click">clicks</string>
+    <string name="clickCount">0</string>
 
 </resources>

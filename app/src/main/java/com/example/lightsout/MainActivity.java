@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int GRID_SIZE = 3;
     private GridLayout grid;
     private boolean cellState [][];
+    private int clicks = 0;
 
     View.OnClickListener buttonListener = new View.OnClickListener() {
         @Override
@@ -23,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 0; i < grid.getChildCount(); i++) {
                 Button gridButton = (Button) grid.getChildAt(i);
 
-
                 if (gridButton == current){
                     int row = i / GRID_SIZE;
                     int col = i % GRID_SIZE;
@@ -32,11 +32,14 @@ public class MainActivity extends AppCompatActivity {
                         cellState[row][col] = false;
                     } else {
                         cellState[row][col] = true;
+                    }
 
                 }
             }
 
+            recolor();
 
+            clicks += 1;
         }
 
 
