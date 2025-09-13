@@ -3,9 +3,11 @@ package com.example.lightsout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.TextView;
 
 import java.util.Random;
 
@@ -15,7 +17,11 @@ public class MainActivity extends AppCompatActivity {
     private GridLayout grid;
     private boolean cellState [][];
     private int clicks = 0;
+    private TextView clickNum;
+    private Button offButton;
+    private Button randomButton;
 
+    // Grid Event Listener
     View.OnClickListener buttonListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -40,11 +46,38 @@ public class MainActivity extends AppCompatActivity {
             recolor();
 
             clicks += 1;
+            clickNum.setText(clicks);
+
         }
 
 
     };
 
+    // Off Button Listener
+    View.OnClickListener offbuttonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Log.i("offButton","offButtonclicked");
+            for(int i =0; i< GRID_SIZE; i++){
+                for(int j =0; j< GRID_SIZE; j++){
+                    cellState[i][j] = false;
+                }
+            }
+            recolor();
+
+        }
+    };
+
+    // Randomize Button Listener
+    View.OnClickListener randomizebuttonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            randomize();
+
+            recolor();
+
+        }
+    };
 
 
     @Override
@@ -55,6 +88,13 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         grid = findViewById(R.id.light_grid);
+
+        clickNum = findViewById(R.id.clickCount);
+
+        offButton = findViewById(R.id.offButton);
+        randomButton = findViewById(R.id.randomButton);
+
+
 
         randomize();
 
@@ -68,6 +108,9 @@ public class MainActivity extends AppCompatActivity {
             currButton.setOnClickListener(buttonListener);
 
         }
+
+        offButton.setOnClickListener(offbuttonListener);
+        randomButton.setOnClickListener((randomizebuttonListener));
 
     }
 

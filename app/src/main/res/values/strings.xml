@@ -5,4 +5,7 @@
     <string name="click">clicks</string>
     <string name="clickCount">0</string>
 
+    <string name="offButton">All Off</string>
+    <string name="randomButton">Randomize</string>
+
 </resources>
