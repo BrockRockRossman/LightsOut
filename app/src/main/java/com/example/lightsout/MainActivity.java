@@ -45,8 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
             recolor();
 
-            clicks += 1;
-            clickNum.setText(clicks);
+
 
         }
 
