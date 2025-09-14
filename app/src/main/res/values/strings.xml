@@ -8,4 +8,8 @@
     <string name="offButton">All Off</string>
     <string name="randomButton">Randomize</string>
 
+    <string name="win">You Win!</string>
+    <string name="playAgainButton">Play again</string>
+
+
 </resources>

@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'com.example.lightsout'
-    compileSdk 33
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.example.lightsout"

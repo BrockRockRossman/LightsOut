@@ -2,6 +2,7 @@ package com.example.lightsout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -153,7 +154,14 @@ public class MainActivity extends AppCompatActivity {
 
         String light = "" + lights;
         lightNum.setText(light);
+
+        if(lights == 9)
+        {
+            Intent intent = new Intent(MainActivity.this, WinActivity.class);
+            startActivity(intent);
+        }
     }
+
 
 
 
