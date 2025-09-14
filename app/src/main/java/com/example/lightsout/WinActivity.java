@@ -43,8 +43,8 @@ public class WinActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String message = intent.getStringExtra("ClickCount");
 
-        clickCount = findViewById(R.id.clickCount);
-        clickCount.setText("Clicks: " + message);
+        clickCount = findViewById(R.id.Score);
+        clickCount.setText("Score: " + message);
 
         playAgainButton = findViewById(R.id.playAgainButton);
         playAgainButton.setOnClickListener(playAgainListener);
