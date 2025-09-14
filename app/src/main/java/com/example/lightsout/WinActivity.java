@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,7 @@ public class WinActivity extends AppCompatActivity {
 
 
     Button playAgainButton;
+    TextView clickCount;
 
     View.OnClickListener playAgainListener = new View.OnClickListener() {
         @Override
@@ -37,6 +39,12 @@ public class WinActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Intent intent = getIntent();
+        String message = intent.getStringExtra("ClickCount");
+
+        clickCount = findViewById(R.id.clickCount);
+        clickCount.setText("Clicks: " + message);
 
         playAgainButton = findViewById(R.id.playAgainButton);
         playAgainButton.setOnClickListener(playAgainListener);

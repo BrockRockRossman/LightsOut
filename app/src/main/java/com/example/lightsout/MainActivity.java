@@ -17,10 +17,12 @@ public class MainActivity extends AppCompatActivity {
     public static final int GRID_SIZE = 3;
     private GridLayout grid;
     private boolean cellState [][];
-
+    private int count = 0;
     private TextView lightNum;
     private Button offButton;
     private Button randomButton;
+
+
 
     // Grid Event Listener
     View.OnClickListener buttonListener = new View.OnClickListener() {
@@ -43,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             }
+
+            count += 1;
 
             recolor();
 
@@ -158,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
         if(lights == 9)
         {
             Intent intent = new Intent(MainActivity.this, WinActivity.class);
+            intent.putExtra("ClickCount", "" + count);
             startActivity(intent);
         }
     }
