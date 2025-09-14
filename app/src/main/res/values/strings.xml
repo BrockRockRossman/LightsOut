@@ -2,10 +2,14 @@
     <string name="app_name">LightsOut</string>
 
     <string name="Header">Brock Lights</string>
-    <string name="click">clicks</string>
-    <string name="clickCount">0</string>
+    <string name="lights">lights</string>
+    <string name="lightCount">0</string>
 
     <string name="offButton">All Off</string>
     <string name="randomButton">Randomize</string>
+
+    <string name="win">You Win!</string>
+    <string name="playAgainButton">Play again</string>
+
 
 </resources>

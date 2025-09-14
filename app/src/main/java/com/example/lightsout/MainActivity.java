@@ -2,6 +2,7 @@ package com.example.lightsout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
     public static final int GRID_SIZE = 3;
     private GridLayout grid;
     private boolean cellState [][];
-    private int clicks = 0;
-    private TextView clickNum;
+
+    private TextView lightNum;
     private Button offButton;
     private Button randomButton;
 
@@ -88,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         grid = findViewById(R.id.light_grid);
 
-        clickNum = findViewById(R.id.clickCount);
+        lightNum = findViewById(R.id.lightNum);
 
         offButton = findViewById(R.id.offButton);
         randomButton = findViewById(R.id.randomButton);
@@ -127,6 +128,8 @@ public class MainActivity extends AppCompatActivity {
                 gridButton.setBackgroundColor(getColor(R.color.black));
             }
         }
+
+        lightCount();
     }
 
     public void randomize(){
@@ -137,6 +140,29 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+    public void lightCount(){
+        int lights = 0;
+        for(int i =0; i< GRID_SIZE; i++){
+            for(int j =0; j< GRID_SIZE; j++){
+                if(cellState[i][j])
+                {
+                    lights += 1;
+                }
+            }
+        }
+
+        String light = "" + lights;
+        lightNum.setText(light);
+
+        if(lights == 9)
+        {
+            Intent intent = new Intent(MainActivity.this, WinActivity.class);
+            startActivity(intent);
+        }
+    }
+
+
 
 
 
