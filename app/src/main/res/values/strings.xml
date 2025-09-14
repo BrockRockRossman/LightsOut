@@ -11,5 +11,7 @@
     <string name="win">You Win!</string>
     <string name="playAgainButton">Play again</string>
 
+    <string name="counts">Clicks: </string>
+
 
 </resources>
